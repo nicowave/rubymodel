@@ -8,11 +8,9 @@
 #  let's practice our knowledge by writing a simple contact list program.
 
 
-
-
-
 # define the 'ask' method
 def ask(question, kind = "string")
+	
 	print question + " "
 	answer = gets.chomp
 	answer = answer.to_i if kind == "number"
@@ -100,7 +98,7 @@ end
 # Phone number: 2403384335
 # ---------
 # Name: Gabriela
-# Phone number:/ 3013205915
+# Phone number: 3013205915
 # Phone number: 2409948057
 # ---------
 
