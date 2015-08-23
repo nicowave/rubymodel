@@ -4,7 +4,7 @@
 # 8.21.2015
 
 
-# Iteration With Each:
+# Iteration With 'each':
 # The while loop will print out an array and use a variable to increment 
 #  and keep track of what it is printing out. 
 # As we're looping through each item in the array, we're using a specific
@@ -24,7 +24,7 @@
 
 # Calls the given block once for each element in self, 
 #  passing that element as a parameter.
-# An Enumerator is returned if no block is given.
+# An 'Enumerator' is returned if no block is given.
 
 a = [ "a", "b", "c" ]
 a.each { |x| print x, " -- \n" }
