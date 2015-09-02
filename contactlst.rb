@@ -8,11 +8,9 @@
 #  let's practice our knowledge by writing a simple contact list program.
 
 
-
-
-
 # define the 'ask' method
 def ask(question, kind = "string")
+	
 	print question + " "
 	answer = gets.chomp
 	answer = answer.to_i if kind == "number"
@@ -26,7 +24,7 @@ puts "#{answer} contact list..."
 # create our add_contact method:
 def add_contact
 	contact = { "name" => "", "phone_numbers" => [] }
-	contact["name"] = ask("What is the person's name?")
+	contact["name"] = ask("What is the contact's name?")
 	answer = ""
 	# contact hash is set up
 	# 'ask' method returns string, assigned to 'name' in 'contact' hash
