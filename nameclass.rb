@@ -118,7 +118,11 @@ puts myname.firstname + " " + myname.midname + " " + myname.lastname
 # The process of accessing and 'writing' attributes in a 'class' can be done using 
 #  `attr_writer` and `attr_accessor` to ease repeating code.
 
-
+# The code above passed the teamtreehouse.com Code Challenge: 
+#   https://teamtreehouse.com/library/
+# 	...ruby-objects-and-classes/variables-and-methods/attribute-writers-and-accessors-2
+#  earned an additional 12 points for completing the 'Attribute Writers and Accessors'
+#  challenge!
 
 
 
