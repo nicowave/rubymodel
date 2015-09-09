@@ -12,33 +12,67 @@
 
 
 class Artgallery
+	attr_reader :name, :address, :phone, :website
 	def initialize(name)
-		# intitalizer method
-		# create an instance variable using '@' preface and setting it to variable
-		#  'passed-in' upon instantiation
 		@name = name
+		@address = " "
+		@phone = " "
+		@website = "http://"
 	end
-	def name
-		@name
+	def getaddress
+		# full address, phone# and other gallery details
+		puts "\n\nYou entered a gallery named: #{name}"
+		puts "\nWhat is the address for this Art Gallery:\t"
+		address = gets.chomp.upcase
+		
+		puts "\nWhat city is the gallery in:\t"
+		city = gets.chomp.upcase
+		address += "\n#{city}, "
+		
+		puts "\nWhat state is that in?\t"
+		state = gets.chomp.upcase
+		address += "#{state} "
+		
+		puts "\nWhat zip-code is the gallery in?\t"
+		zip = gets.chomp
+		address += "#{zip}\n"
+
+		puts "\nPlease provide a phone number for this gallery (###-###-####)\n"
+		phone = gets.chomp
+		address += "#{phone}\n"
+
+		puts "\nOne last thing, please type in the website for your gallery:\n"
+		website = gets.chomp.downcase
+		address += "http://#{website}\n"
+
+		@address = address
+		return address
 	end
-	def address_string
-		"1590 S. Coast Hwy. Laguna Beach, CA 92651"
-	end
-	def phone_string
-		"949-315-5015"
-	end
-	def website
-		"http://purelagunabeach.com"
+
+	def to_s
+		return "#{name}\n#{address_string}\n#{phone}\n#{website}\n"
 	end
 end
 
 
 # 'instantiate' 'Name' class with 'name' variable
 #   print out 'name' properties to console using 'name''s methods 
-gallery = Artgallery.new("Pure Laguna Beach Gallery")
+puts "Hello!\nPlease enter the name of your Art Gallery:\n"
+name = gets.chomp.upcase
+gallery = Artgallery.new(name)
+gallery.getaddress
+puts "--Recently Entered Art Gallery:\n\n"
+puts "Name: #{name}\nAddress & Contact:\n#{gallery.address}\n"
 
-puts gallery.name + " \n" + gallery.address_string + " \n" + 
-gallery.phone_string + " \n" + gallery.website
+													# => Pure Laguna Beach Gallery
+													# => 1590 S. Coast Hwy. 
+													# => Laguna Beach, 
+													# => California
+													# =>  92651
+												# => 		949-315-5015
+											# => 	purelagunabeach.com
+
+
 
 # from console:
 #  nicowavemountain:ruby nico$ ruby artclass.rb
@@ -47,32 +81,43 @@ gallery.phone_string + " \n" + gallery.website
 # => 949-315-5015
 # => http://purelagunabeach.com
 
+# nicowavemountain:ruby nico$ ruby artclass.rb
+# Hello!
+# Please enter the name of your Art Gallery:
+# Pure Laguna Beach Gallery
 
-# create new Art Gallery 'class' with the 'attr_reader' method to read all of the
-# 	properties in the class
-#  use 'initialiser' method to capture all properties of 'class' as 'arguments'
-#   'passed-in' to class during instantiation
-class ARTgallery
-	attr_reader :name, :address_string, :phone_string, :website
-	def initialize(name, address_string, phone_string, website)
-		@name = name
-		@address_string = address_string
-		@phone_string = phone_string
-		@website = website
-	end
-end
 
-# instantiate the new 'ARTgallery' class filling in each argument according to...
-#  "nicowavemountain ~/dev/web/artistree/galleries.html"
-newgallery = ARTgallery.new("Pure Laguna Beach Gallery",
-														"1590 S. Coast Hwy. Laguna Beach, CA 92651",
-														"949-315-5015",
-														"http://purelagunabeach.com")
+# You entered a gallery named: PURE LAGUNA BEACH GALLERY
 
-# print out result to our console using '\n' to print each property of class onto
-#  a new line
-puts "--New Gallery: \n" + newgallery.name  + " \n" + newgallery.address_string + 
-	" \n" + newgallery.phone_string + " \n" + newgallery.website
+# What is the address for this Art Gallery:	
+# 1590 S. Coast Hwy. 
+
+# What city is the gallery in:	
+# Laguna Beach
+
+# What state is that in?	
+# California
+
+# What zip-code is the gallery in?	
+# 92651
+
+# Please provide a phone number for this gallery (###-###-####)
+# 949-315-5015
+
+# One last thing, please type in the website for your gallery:
+# purelagunabeach.com
+# --Recently Entered Art Gallery:
+
+# Name: PURE LAGUNA BEACH GALLERY
+# Address & Contact:
+# 1590 S. COAST HWY. 
+# LAGUNA BEACH, CALIFORNIA 92651
+# 949-315-5015
+# http://purelagunabeach.com
+
+
+									
+
 
 
 
