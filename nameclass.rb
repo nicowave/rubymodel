@@ -26,7 +26,6 @@ class Name
 	end
 end
 
-
 # 'instantiate' 'Name' class with 'name' variable
 #   print out 'name' properties to console using 'name''s methods 
 name = Name.new
@@ -35,7 +34,7 @@ puts name.firstname
 puts name.midname
 puts name.lastname
 
-# passed teamtreehouse.com code challenge and earned the Ruby Objects and Classes badge.
+# Passed teamtreehouse.com code challenge and earned the Ruby Objects and Classes badge.
 #  https://teamtreehouse.com/library/
 #  .../ruby-objects-and-classes/ruby-objects-and-classes/
 #  .../creating-and-instantiating-a-class
@@ -43,6 +42,7 @@ puts name.lastname
 # teamtreehouse.com Code Challenge 2:
 #  https://teamtreehouse.com/library/
 #  .../ruby-objects-and-classes/variables-and-methods/variables-and-methods
+
 # In the initialize method of the Name class, 
 #  set an instance variable called @title to the title argument.
 # Inside the Name class, create a method called title that returns the
@@ -92,9 +92,20 @@ class NameThree
     @midname = midname
     @lastname = lastname 
 	end
+	# ^ the above 'method' is called an 'initializer method'
+	# 'Methods' are extremely useful and powerful when writing 'classes'. 
+	# A 'method' can manipulate the data inside of an 'instance' of a 'class'
+	#  and return or format that data in new and interesting ways.
 	# => def title(new_title)
 		# => @title = new_title
 	# => end
+
+	def full_name
+		@firstname + " " + @midname + " " + @lastname
+	end
+	def fullname_with_title
+		@title + " " + full_name()
+	end
 end
 
 # teamtreehouse.com Code Challenge 3:
@@ -102,17 +113,19 @@ end
 #  'the Attribute Readers' challenge in Ruby Objects and Classes
 
 myname = NameThree.new("Mr.", "Nicolas", "", "Roldos")
-puts myname.title + "\n" + 
-	myname.firstname + " " + 
-	myname.midname + "\n" + 
-	myname.lastname
+jefename = NameThree.new("Mr.", "Jorge", "", "Roldos")
+puts jefename.fullname_with_title
+puts myname.fullname_with_title
 
 myname.title = "Dr."
-puts myname.title
-
+jefename.title = "Dr."
+jefename.midname = "E. "
 myname.firstname = "Nico"
 myname.midname = "J. "
-puts myname.firstname + " " + myname.midname + " " + myname.lastname 
+puts myname.fullname_with_title
+puts jefename.fullname_with_title
+# => puts myname.title + " " + myname.full_name
+
 
 # Ruby gives us shortcuts to write common pieces of code. 
 # The process of accessing and 'writing' attributes in a 'class' can be done using 
@@ -123,6 +136,31 @@ puts myname.firstname + " " + myname.midname + " " + myname.lastname
 # 	...ruby-objects-and-classes/variables-and-methods/attribute-writers-and-accessors-2
 #  earned an additional 12 points for completing the 'Attribute Writers and Accessors'
 #  challenge!
+
+# Also, earned an additional 12 points for completing the 'Methods' challenge!
+# https://teamtreehouse.com/library/
+#  ...ruby-objects-and-classes/variables-and-methods/methods-2
+
+# Later earned an additional 6 points for completing the
+#  'Instance Variables' and 'Local Variables' quiz!
+# https://teamtreehouse.com/library/
+# ...ruby-objects-and-classes/variables-and-methods/the-tos-method
+
+# Just earned the Ruby 'Variables and Methods' badge:
+# https://teamtreehouse.com/library/
+# ...ruby-objects-and-classes/variables-and-methods/the-tos-method-2
+
+# When using variables inside classes, only instance variables, 
+#  which are prefixed with the `@` character,
+#  will be visible to all of the methods in the class.
+# A variable that only exists inside of a code block or method is called 
+#  a 'local-variable'.
+# This concept is called 'scope'.
+
+
+
+
+
 
 
 
